@@ -38,7 +38,6 @@ def train_model(X, y):
 
     return model
 @task
-@task
 def evaluate_model(model, X, y):
     y_pred = model.predict(X)
     rmse = root_mean_squared_error(y, y_pred)
