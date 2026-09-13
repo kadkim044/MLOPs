@@ -1,0 +1,42 @@
+---
+# Welcome to your prefect.yaml file! You can use this file for
+# storing and managing configuration for deploying your flows.
+# We recommend committing this file to source control along
+# with your flow code.
+
+# Generic metadata about this project
+name: orchestration-small
+prefect-version: 3.8.5
+
+# build section allows you to manage and build docker images
+build: null
+
+# push section allows you to manage if and how this project
+# is uploaded to remote locations
+push: null
+
+# pull section allows you to provide instructions for cloning
+# this project in remote locations
+pull:
+- prefect.deployments.steps.set_working_directory:
+    directory: /workspaces/MLOPs/orchestration-small
+
+# the deployments section allows you to provide configuration
+# for deploying flows
+deployments:
+- name: monthly-training
+  version: null
+  tags: []
+  concurrency_limit: null
+  description: null
+  entrypoint: pipeline.py:training_pipeline
+  parameters: {}
+  work_pool:
+    name: local-pool
+    work_queue_name: null
+    job_variables: {}
+  schedules:
+  - interval: 60.0
+    anchor_date: '2026-09-13T15:27:59.715992+00:00'
+    timezone: UTC
+    active: true
