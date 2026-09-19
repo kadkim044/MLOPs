@@ -1,4 +1,4 @@
-version: "3.8"
+
 
 volumes:
   grafana-data: {}
@@ -23,6 +23,8 @@ services:
     restart: always
     ports:
       - "8080:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     networks:
       - back-tier
       - front-tier
