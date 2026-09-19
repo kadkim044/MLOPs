@@ -1,0 +1,397 @@
+{
+
+  "annotations": [
+
+    {
+
+      "kind": "AnnotationQuery",
+
+      "spec": {
+
+        "builtIn": true,
+
+        "enable": true,
+
+        "hide": true,
+
+        "iconColor": "rgba(0, 211, 255, 1)",
+
+        "name": "Annotations & Alerts",
+
+        "query": {
+
+          "datasource": {
+
+            "name": "-- Grafana --"
+
+          },
+
+          "group": "grafana",
+
+          "kind": "DataQuery",
+
+          "spec": {},
+
+          "version": "v0"
+
+        }
+
+      }
+
+    }
+
+  ],
+
+  "cursorSync": "Off",
+
+  "editable": true,
+
+  "elements": {
+
+    "panel-1": {
+
+      "kind": "Panel",
+
+      "spec": {
+
+        "data": {
+
+          "kind": "QueryGroup",
+
+          "spec": {
+
+            "queries": [
+
+              {
+
+                "kind": "PanelQuery",
+
+                "spec": {
+
+                  "hidden": false,
+
+                  "query": {
+
+                    "datasource": {
+
+                      "name": "bfyrjo7wr8d8gb"
+
+                    },
+
+                    "group": "grafana-postgresql-datasource",
+
+                    "kind": "DataQuery",
+
+                    "spec": {
+
+                      "dataset": "test",
+
+                      "editorMode": "builder",
+
+                      "format": "table",
+
+                      "rawSql": "SELECT prediction_drift FROM dummy_metrics LIMIT 50 ",
+
+                      "sql": {
+
+                        "columns": [
+
+                          {
+
+                            "parameters": [
+
+                              {
+
+                                "name": "prediction_drift",
+
+                                "type": "functionParameter"
+
+                              }
+
+                            ],
+
+                            "type": "function"
+
+                          }
+
+                        ],
+
+                        "groupBy": [
+
+                          {
+
+                            "property": {
+
+                              "type": "string"
+
+                            },
+
+                            "type": "groupBy"
+
+                          }
+
+                        ],
+
+                        "limit": 50
+
+                      },
+
+                      "table": "dummy_metrics"
+
+                    },
+
+                    "version": "v0"
+
+                  },
+
+                  "refId": "A"
+
+                }
+
+              }
+
+            ],
+
+            "queryOptions": {},
+
+            "transformations": []
+
+          }
+
+        },
+
+        "description": "",
+
+        "id": 1,
+
+        "links": [],
+
+        "title": "New panel",
+
+        "vizConfig": {
+
+          "group": "bargauge",
+
+          "kind": "VizConfig",
+
+          "spec": {
+
+            "fieldConfig": {
+
+              "defaults": {
+
+                "color": {
+
+                  "mode": "thresholds"
+
+                },
+
+                "thresholds": {
+
+                  "mode": "percentage",
+
+                  "steps": [
+
+                    {
+
+                      "color": "green",
+
+                      "value": 0
+
+                    },
+
+                    {
+
+                      "color": "orange",
+
+                      "value": 60
+
+                    },
+
+                    {
+
+                      "color": "red",
+
+                      "value": 80
+
+                    }
+
+                  ]
+
+                }
+
+              },
+
+              "overrides": []
+
+            },
+
+            "options": {
+
+              "displayMode": "gradient",
+
+              "legend": {
+
+                "calcs": [],
+
+                "displayMode": "list",
+
+                "placement": "bottom",
+
+                "showLegend": false
+
+              },
+
+              "maxVizHeight": 300,
+
+              "minVizHeight": 16,
+
+              "minVizWidth": 8,
+
+              "namePlacement": "top",
+
+              "orientation": "horizontal",
+
+              "reduceOptions": {
+
+                "calcs": [
+
+                  "lastNotNull"
+
+                ],
+
+                "fields": "",
+
+                "values": false
+
+              },
+
+              "showUnfilled": true,
+
+              "sizing": "auto",
+
+              "valueMode": "text"
+
+            }
+
+          },
+
+          "version": "13.2.2"
+
+        }
+
+      }
+
+    }
+
+  },
+
+  "layout": {
+
+    "kind": "GridLayout",
+
+    "spec": {
+
+      "items": [
+
+        {
+
+          "kind": "GridLayoutItem",
+
+          "spec": {
+
+            "element": {
+
+              "kind": "ElementReference",
+
+              "name": "panel-1"
+
+            },
+
+            "height": 8,
+
+            "width": 12,
+
+            "x": 0,
+
+            "y": 0
+
+          }
+
+        }
+
+      ]
+
+    }
+
+  },
+
+  "links": [],
+
+  "liveNow": false,
+
+  "preferences": {
+
+    "layout": {
+
+      "kind": "GridLayout",
+
+      "spec": {
+
+        "items": []
+
+      }
+
+    }
+
+  },
+
+  "preload": false,
+
+  "tags": [],
+
+  "timeSettings": {
+
+    "autoRefresh": "",
+
+    "autoRefreshIntervals": [
+
+      "5s",
+
+      "10s",
+
+      "30s",
+
+      "1m",
+
+      "5m",
+
+      "15m",
+
+      "30m",
+
+      "1h",
+
+      "2h",
+
+      "1d"
+
+    ],
+
+    "fiscalYearStartMonth": 0,
+
+    "from": "now-6h",
+
+    "hideTimepicker": false,
+
+    "timezone": "browser",
+
+    "to": "now"
+
+  },
+
+  "title": "New dashboard",
+
+  "variables": []
+
+}
