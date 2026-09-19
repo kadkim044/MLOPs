@@ -2,12 +2,13 @@ apiVersion: 1
 
 datasources:
   - name: PostgresSQL
+    uid: postgres
     type: postgres
     access: proxy
-    url: db.:5432
+    url: host.docker.internal:5432
     database: test
     user: postgres
     secureJsonData:
       password: "example"
     jsonData:
-      sslmode: "disable"
+      sslmode: disable

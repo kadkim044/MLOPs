@@ -1,10 +1,9 @@
-
-
 volumes:
   grafana-data: {}
 
 networks:
   front-tier:
+
   back-tier:
 
 services:
@@ -36,6 +35,8 @@ services:
       - "3000:3000"
     volumes:
       - ./config/grafana_datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     networks:
       - front-tier
       - back-tier
