@@ -35,6 +35,8 @@ services:
       - "3000:3000"
     volumes:
       - ./config/grafana_datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
+      - ./config/grafana_dashboards.yaml:/etc/grafana/provisioning/dashboards/dashboards.yaml
+      - ./dashboards:/opt/grafana/dashboards
     extra_hosts:
       - "host.docker.internal:host-gateway"
     networks:
